@@ -33,6 +33,11 @@ function buildApp() {
   const authHandler = new AuthHandler(authUseCase);
   const eventHandler = new EventHandler(eventUseCase);
 
+  // Health check
+  app.get('/', (req, res) => {
+    res.json({ message: 'Event Management API is running' });
+  });
+
   // Routes
   app.use('/', authRoutes(authHandler));
   app.use('/events', eventRoutes(eventHandler));
