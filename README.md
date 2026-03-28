@@ -86,6 +86,10 @@ curl -X POST http://localhost:3000/events/EVENT_ID/register \
 > Note: Only users with `role: "attendee"` can call this endpoint. Organizer and admin tokens will be rejected with 403.
 
 ---
+## API Testing
+- Import the Postman collection from:
+- docs/postman_collection.json
+---
 
 ## How to Run Tests
 
