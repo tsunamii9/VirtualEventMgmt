@@ -1,0 +1,177 @@
+{
+  "info": {
+    "_postman_id": "61252c63-66f2-4a1a-aef5-82d7e0380942",
+    "name": "VirtualEventMgmt",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "27570768"
+  },
+  "item": [
+    {
+      "name": "/register",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"Suman\",\n    \"email\": \"suman.kumar@gmail.com\",\n    \"password\": \"password123\",\n    \"role\": \"organizer\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/register",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "register"
+          ]
+        },
+        "description": "Generated from cURL: curl -X POST http://localhost:3000/register \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"name\":\"Alice\",\"email\":\"alice@example.com\",\"password\":\"secret123\",\"role\":\"organizer\"}'"
+      },
+      "response": []
+    },
+    {
+      "name": "/login",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"email\": \"suman.kumar@gmail.com\",\n    \"password\": \"password123\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "login"
+          ]
+        },
+        "description": "Generated from cURL: curl -X POST http://localhost:3000/login \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"email\":\"alice@example.com\",\"password\":\"secret123\"}'"
+      },
+      "response": []
+    },
+    {
+      "name": "/events",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIzNjEwNjg4NC1kZTM5LTQ0NmYtOTc4OC1jNzQyYjc3M2YwZDUiLCJyb2xlIjoib3JnYW5pemVyIiwiaWF0IjoxNzc0NzIxNjc5LCJleHAiOjE3NzQ4MDgwNzl9.ptHcCvpVSsO17q-kxWS1_yfysxhrk6Dv1ILR2uDYS84"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"title\": \"Airtribe Hackathon\",\n    \"description\": \"An event for the Airtribe Hackathon\",\n    \"date\": \"2026-03-25\",\n    \"time\": \"10:00\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/events",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "events"
+          ]
+        },
+        "description": "Generated from cURL: curl -X POST http://localhost:3000/events \\\n  -H \"Authorization: Bearer TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"title\":\"Node Summit\",\"description\":\"A Node.js conference\",\"date\":\"2026-06-15\",\"time\":\"10:00\"}'"
+      },
+      "response": []
+    },
+    {
+      "name": "/events/EVENT_ID/register",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhNzVkODRjOS02YjQ2LTQ1YWQtODk1ZS03NzY3YTRiYzYwNjAiLCJyb2xlIjoiYXR0ZW5kZWUiLCJpYXQiOjE3NzQ3MjIxMDQsImV4cCI6MTc3NDgwODUwNH0.rZPZxc38VFEwstkM6wqMNR6G9v91-EurAXZVgcJRuBM"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/events/01262b0e-9c96-4fcc-b9da-869bfad4185c/register",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "events",
+            "01262b0e-9c96-4fcc-b9da-869bfad4185c",
+            "register"
+          ]
+        },
+        "description": "Generated from cURL: curl -X POST http://localhost:3000/events/EVENT_ID/register \\\n  -H \"Authorization: Bearer TOKEN\""
+      },
+      "response": []
+    },
+    {
+      "name": "/register-atendee",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"Sam\",\n    \"email\": \"sam@gmail.com\",\n    \"password\": \"sam@123\",\n    \"role\": \"attendee\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/register",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "register"
+          ]
+        },
+        "description": "Generated from cURL: curl -X POST http://localhost:3000/register \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"name\":\"Bob\",\"email\":\"bob@example.com\",\"password\":\"secret123\",\"role\":\"attendee\"}'\n"
+      },
+      "response": []
+    }
+  ]
+}
